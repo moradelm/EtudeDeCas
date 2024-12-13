@@ -1,0 +1,31 @@
+type Reservation {
+    id: ID!
+    customerName: String!
+    description: String
+    checkIn: String!
+    checkOut: String!
+}
+
+type Query {
+    getAllReservations: [Reservation]!
+    getReservationById(id: ID!): Reservation
+}
+
+type Mutation {
+    createReservation(
+        customerName: String!
+        description: String
+        checkIn: String!
+        checkOut: String!
+    ): Reservation
+
+    updateReservation(
+        id: ID!
+        customerName: String!
+        description: String
+        checkIn: String!
+        checkOut: String!
+    ): Reservation
+
+    deleteReservation(id: ID!): String
+}
